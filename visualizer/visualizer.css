@@ -19,7 +19,7 @@
   flex: 0 0 25%;
   margin: 50px 20px;
 }
-.bufferingCollator {
+.bufferContainer {
   flex: 0 0 30%;
   margin: 50px 20px;
 }
@@ -29,7 +29,6 @@
 }
 .cardViewport {
   height: 70vh;
-  margin: 20px 0;
   overflow: scroll;
 }
 .cardCache {
@@ -48,6 +47,9 @@
   align-items: center;
   margin: 50px 0;
   height: 20vh;
+}
+.sourceStream:nth-child(2) {
+  margin-top: 0;
 }
 
 .sourceBuffer {
@@ -113,4 +115,13 @@ i.fa-instagram {
   font-family: Helvetica;
   font-size: 1.7em;
   font-weight: bold;
+}
+
+.componentLabel {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.rewindStream .componentLabel {
+  margin-left: -30%;
 }

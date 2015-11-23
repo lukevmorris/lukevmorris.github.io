@@ -21,7 +21,7 @@ setInterval(function() {
   viewport.scrollTop = viewport.scrollHeight;
 }, 1000);
 
-},{"./scripts/components/search_visualizer":14,"./scripts/playback":19}],2:[function(require,module,exports){
+},{"./scripts/components/search_visualizer":15,"./scripts/playback":20}],2:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -267,7 +267,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":32,"fbjs/lib/invariant":4}],4:[function(require,module,exports){
+},{"_process":33,"fbjs/lib/invariant":4}],4:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -319,7 +319,7 @@ var invariant = function (condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":32}],5:[function(require,module,exports){
+},{"_process":33}],5:[function(require,module,exports){
 /* eslint-disable no-unused-vars */
 'use strict';
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -391,7 +391,23 @@ var ActionHelpers = {
 
 module.exports = ActionHelpers;
 
-},{"./dispatcher":18}],7:[function(require,module,exports){
+},{"./dispatcher":19}],7:[function(require,module,exports){
+BufferingCollator = require("./buffering_collator");
+
+var BufferContainer = React.createClass({
+  render: function() {
+    return (
+      React.createElement("div", {className: "bufferContainer"},
+        React.createElement("div", {className: "componentLabel"}, "Buffering Collator"),
+        React.createElement(BufferingCollator)
+      )
+    )
+  }
+});
+
+module.exports = BufferContainer;
+
+},{"./buffering_collator":8}],8:[function(require,module,exports){
 CardStore = require("../stores/card_store");
 Card = require("./card");
 
@@ -431,7 +447,7 @@ var BufferingCollator = React.createClass({
 
 module.exports = BufferingCollator;
 
-},{"../stores/card_store":21,"./card":8}],8:[function(require,module,exports){
+},{"../stores/card_store":22,"./card":9}],9:[function(require,module,exports){
 var Card = React.createClass({
   render: function() {
     var cardClass = "card " + this.props.card.source;
@@ -443,7 +459,7 @@ var Card = React.createClass({
 
 module.exports = Card;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var CardCache = React.createClass({
   render: function() {
     return (
@@ -454,7 +470,7 @@ var CardCache = React.createClass({
 
 module.exports = CardCache;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 CardViewport = require("./card_viewport");
 CardCache = require("./card_cache");
 
@@ -462,6 +478,7 @@ var CardColumn = React.createClass({
   render: function() {
     return (
       React.createElement("div", {className: "cardColumn"},
+        React.createElement("div", {className: "componentLabel"}, "Column"),
         React.createElement(CardViewport)
       )
     );
@@ -470,7 +487,7 @@ var CardColumn = React.createClass({
 
 module.exports = CardColumn;
 
-},{"./card_cache":9,"./card_viewport":11}],11:[function(require,module,exports){
+},{"./card_cache":10,"./card_viewport":12}],12:[function(require,module,exports){
 Card = require("./card");
 CardStore = require("../stores/card_store");
 
@@ -510,13 +527,14 @@ var CardViewport = React.createClass({
 
 module.exports = CardViewport;
 
-},{"../stores/card_store":21,"./card":8}],12:[function(require,module,exports){
+},{"../stores/card_store":22,"./card":9}],13:[function(require,module,exports){
 SourceStream = require("./source_stream");
 
 var RewindStream = React.createClass({
   render: function() {
     return (
       React.createElement("div", {className: "rewindStream"},
+        React.createElement("div", {className: "componentLabel"}, "Source Buffers"),
         React.createElement(SourceStream, {source: "twitter", cards: 25}),
         React.createElement(SourceStream, {source: "facebook", cards: 50}),
         React.createElement(SourceStream, {source: "instagram", cards: 75})
@@ -527,7 +545,7 @@ var RewindStream = React.createClass({
 
 module.exports = RewindStream;
 
-},{"./source_stream":17}],13:[function(require,module,exports){
+},{"./source_stream":18}],14:[function(require,module,exports){
 var QueryStore = require("../stores/query_store");
 
 var SearchQuery = React.createClass({
@@ -574,9 +592,9 @@ var SearchQuery = React.createClass({
 
 module.exports = SearchQuery;
 
-},{"../stores/query_store":22}],14:[function(require,module,exports){
+},{"../stores/query_store":23}],15:[function(require,module,exports){
 CardColumn = require("./card_column");
-BufferingCollator = require("./buffering_collator");
+BufferContainer = require("./buffer_container");
 RewindStream = require("./rewind_stream");
 SearchQuery = require("./search_query");
 
@@ -585,7 +603,7 @@ var SearchVisualizer = React.createClass({
     return (
       React.createElement("div", {className: "searchVisualizer"},
         React.createElement(CardColumn),
-        React.createElement(BufferingCollator),
+        React.createElement(BufferContainer),
         React.createElement(RewindStream),
         React.createElement(SearchQuery)
       )
@@ -595,7 +613,7 @@ var SearchVisualizer = React.createClass({
 
 module.exports = SearchVisualizer;
 
-},{"./buffering_collator":7,"./card_column":10,"./rewind_stream":12,"./search_query":13}],15:[function(require,module,exports){
+},{"./buffer_container":7,"./card_column":11,"./rewind_stream":13,"./search_query":14}],16:[function(require,module,exports){
 CardStore = require("../stores/card_store");
 Card = require("./card");
 
@@ -635,7 +653,7 @@ var SourceBuffer = React.createClass({
 
 module.exports = SourceBuffer;
 
-},{"../stores/card_store":21,"./card":8}],16:[function(require,module,exports){
+},{"../stores/card_store":22,"./card":9}],17:[function(require,module,exports){
 ApiStore = require("../stores/api_store");
 
 var SourceLogo = React.createClass({
@@ -684,7 +702,7 @@ var SourceLogo = React.createClass({
 
 module.exports = SourceLogo;
 
-},{"../stores/api_store":20}],17:[function(require,module,exports){
+},{"../stores/api_store":21}],18:[function(require,module,exports){
 SourceBuffer = require("./source_buffer");
 SourceLogo = require("./source_logo");
 
@@ -701,12 +719,12 @@ var SourceStream = React.createClass({
 
 module.exports = SourceStream;
 
-},{"./source_buffer":15,"./source_logo":16}],18:[function(require,module,exports){
+},{"./source_buffer":16,"./source_logo":17}],19:[function(require,module,exports){
 var Dispatcher = require("flux").Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":2}],19:[function(require,module,exports){
+},{"flux":2}],20:[function(require,module,exports){
 var http = require("http");
 var ActionHelpers = require("./action_helpers");
 
@@ -748,7 +766,7 @@ var Playback = {
 
 module.exports = Playback;
 
-},{"./action_helpers":6,"http":51}],20:[function(require,module,exports){
+},{"./action_helpers":6,"http":52}],21:[function(require,module,exports){
 var assign = require("object-assign");
 var EventEmitter = require("events").EventEmitter;
 var AppDispatcher = require("../dispatcher");
@@ -801,7 +819,7 @@ var ApiStore = assign({}, EventEmitter.prototype, {
 
 module.exports = ApiStore;
 
-},{"../dispatcher":18,"events":28,"object-assign":5}],21:[function(require,module,exports){
+},{"../dispatcher":19,"events":29,"object-assign":5}],22:[function(require,module,exports){
 var assign = require("object-assign");
 var EventEmitter = require("events").EventEmitter;
 var AppDispatcher = require("../dispatcher");
@@ -930,7 +948,7 @@ var CardStore = assign({}, EventEmitter.prototype, {
 
 module.exports = CardStore;
 
-},{"../dispatcher":18,"events":28,"object-assign":5}],22:[function(require,module,exports){
+},{"../dispatcher":19,"events":29,"object-assign":5}],23:[function(require,module,exports){
 var assign = require("object-assign");
 var EventEmitter = require("events").EventEmitter;
 var AppDispatcher = require("../dispatcher");
@@ -972,9 +990,9 @@ var QueryStore = assign({}, EventEmitter.prototype, {
 
 module.exports = QueryStore;
 
-},{"../dispatcher":18,"events":28,"object-assign":5}],23:[function(require,module,exports){
+},{"../dispatcher":19,"events":29,"object-assign":5}],24:[function(require,module,exports){
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -2522,7 +2540,7 @@ function blitBuffer (src, dst, offset, length) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":25,"ieee754":26,"is-array":27}],25:[function(require,module,exports){
+},{"base64-js":26,"ieee754":27,"is-array":28}],26:[function(require,module,exports){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 ;(function (exports) {
@@ -2648,7 +2666,7 @@ var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 	exports.fromByteArray = uint8ToBase64
 }(typeof exports === 'undefined' ? (this.base64js = {}) : exports))
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -2734,7 +2752,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 
 /**
  * isArray
@@ -2769,7 +2787,7 @@ module.exports = isArray || function (val) {
   return !! val && '[object Array]' == str.call(val);
 };
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -3069,7 +3087,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -3094,7 +3112,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 /**
  * Determine if an object is Buffer
  *
@@ -3113,12 +3131,12 @@ module.exports = function (obj) {
     ))
 }
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -3211,7 +3229,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.3.2 by @mathias */
 ;(function(root) {
@@ -3745,7 +3763,7 @@ process.umask = function() { return 0; };
 }(this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -3831,7 +3849,7 @@ var isArray = Array.isArray || function (xs) {
   return Object.prototype.toString.call(xs) === '[object Array]';
 };
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -3918,16 +3936,16 @@ var objectKeys = Object.keys || function (obj) {
   return res;
 };
 
-},{}],36:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 'use strict';
 
 exports.decode = exports.parse = require('./decode');
 exports.encode = exports.stringify = require('./encode');
 
-},{"./decode":34,"./encode":35}],37:[function(require,module,exports){
+},{"./decode":35,"./encode":36}],38:[function(require,module,exports){
 module.exports = require("./lib/_stream_duplex.js")
 
-},{"./lib/_stream_duplex.js":38}],38:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":39}],39:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
 // prototypally inherits from Readable, and then parasitically from
@@ -4011,7 +4029,7 @@ function forEach (xs, f) {
   }
 }
 
-},{"./_stream_readable":40,"./_stream_writable":42,"core-util-is":43,"inherits":29,"process-nextick-args":44}],39:[function(require,module,exports){
+},{"./_stream_readable":41,"./_stream_writable":43,"core-util-is":44,"inherits":30,"process-nextick-args":45}],40:[function(require,module,exports){
 // a passthrough stream.
 // basically just the most minimal sort of Transform stream.
 // Every written chunk gets output as-is.
@@ -4040,7 +4058,7 @@ PassThrough.prototype._transform = function(chunk, encoding, cb) {
   cb(null, chunk);
 };
 
-},{"./_stream_transform":41,"core-util-is":43,"inherits":29}],40:[function(require,module,exports){
+},{"./_stream_transform":42,"core-util-is":44,"inherits":30}],41:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -5017,7 +5035,7 @@ function indexOf (xs, x) {
 }
 
 }).call(this,require('_process'))
-},{"./_stream_duplex":38,"_process":32,"buffer":24,"core-util-is":43,"events":28,"inherits":29,"isarray":31,"process-nextick-args":44,"string_decoder/":56,"util":23}],41:[function(require,module,exports){
+},{"./_stream_duplex":39,"_process":33,"buffer":25,"core-util-is":44,"events":29,"inherits":30,"isarray":32,"process-nextick-args":45,"string_decoder/":57,"util":24}],42:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -5216,7 +5234,7 @@ function done(stream, er) {
   return stream.push(null);
 }
 
-},{"./_stream_duplex":38,"core-util-is":43,"inherits":29}],42:[function(require,module,exports){
+},{"./_stream_duplex":39,"core-util-is":44,"inherits":30}],43:[function(require,module,exports){
 // A bit simpler than readable streams.
 // Implement an async ._write(chunk, encoding, cb), and it'll handle all
 // the drain event emission and buffering.
@@ -5745,7 +5763,7 @@ function endWritable(stream, state, cb) {
   state.ended = true;
 }
 
-},{"./_stream_duplex":38,"buffer":24,"core-util-is":43,"events":28,"inherits":29,"process-nextick-args":44,"util-deprecate":45}],43:[function(require,module,exports){
+},{"./_stream_duplex":39,"buffer":25,"core-util-is":44,"events":29,"inherits":30,"process-nextick-args":45,"util-deprecate":46}],44:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -5856,7 +5874,7 @@ function objectToString(o) {
 }
 
 }).call(this,{"isBuffer":require("../../../../insert-module-globals/node_modules/is-buffer/index.js")})
-},{"../../../../insert-module-globals/node_modules/is-buffer/index.js":30}],44:[function(require,module,exports){
+},{"../../../../insert-module-globals/node_modules/is-buffer/index.js":31}],45:[function(require,module,exports){
 (function (process){
 'use strict';
 module.exports = nextTick;
@@ -5873,7 +5891,7 @@ function nextTick(fn) {
 }
 
 }).call(this,require('_process'))
-},{"_process":32}],45:[function(require,module,exports){
+},{"_process":33}],46:[function(require,module,exports){
 (function (global){
 
 /**
@@ -5944,10 +5962,10 @@ function config (name) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 module.exports = require("./lib/_stream_passthrough.js")
 
-},{"./lib/_stream_passthrough.js":39}],47:[function(require,module,exports){
+},{"./lib/_stream_passthrough.js":40}],48:[function(require,module,exports){
 var Stream = (function (){
   try {
     return require('st' + 'ream'); // hack to fix a circular dependency issue when used with browserify
@@ -5961,13 +5979,13 @@ exports.Duplex = require('./lib/_stream_duplex.js');
 exports.Transform = require('./lib/_stream_transform.js');
 exports.PassThrough = require('./lib/_stream_passthrough.js');
 
-},{"./lib/_stream_duplex.js":38,"./lib/_stream_passthrough.js":39,"./lib/_stream_readable.js":40,"./lib/_stream_transform.js":41,"./lib/_stream_writable.js":42}],48:[function(require,module,exports){
+},{"./lib/_stream_duplex.js":39,"./lib/_stream_passthrough.js":40,"./lib/_stream_readable.js":41,"./lib/_stream_transform.js":42,"./lib/_stream_writable.js":43}],49:[function(require,module,exports){
 module.exports = require("./lib/_stream_transform.js")
 
-},{"./lib/_stream_transform.js":41}],49:[function(require,module,exports){
+},{"./lib/_stream_transform.js":42}],50:[function(require,module,exports){
 module.exports = require("./lib/_stream_writable.js")
 
-},{"./lib/_stream_writable.js":42}],50:[function(require,module,exports){
+},{"./lib/_stream_writable.js":43}],51:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -6096,7 +6114,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":28,"inherits":29,"readable-stream/duplex.js":37,"readable-stream/passthrough.js":46,"readable-stream/readable.js":47,"readable-stream/transform.js":48,"readable-stream/writable.js":49}],51:[function(require,module,exports){
+},{"events":29,"inherits":30,"readable-stream/duplex.js":38,"readable-stream/passthrough.js":47,"readable-stream/readable.js":48,"readable-stream/transform.js":49,"readable-stream/writable.js":50}],52:[function(require,module,exports){
 var ClientRequest = require('./lib/request')
 var extend = require('xtend')
 var statusCodes = require('builtin-status-codes')
@@ -6171,7 +6189,7 @@ http.METHODS = [
 	'UNLOCK',
 	'UNSUBSCRIBE'
 ]
-},{"./lib/request":53,"builtin-status-codes":55,"url":57,"xtend":59}],52:[function(require,module,exports){
+},{"./lib/request":54,"builtin-status-codes":56,"url":58,"xtend":60}],53:[function(require,module,exports){
 (function (global){
 exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableByteStream)
 
@@ -6215,7 +6233,7 @@ function isFunction (value) {
 xhr = null // Help gc
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (process,global,Buffer){
 // var Base64 = require('Base64')
 var capability = require('./capability')
@@ -6494,7 +6512,7 @@ var unsafeHeaders = [
 ]
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"./capability":52,"./response":54,"_process":32,"buffer":24,"inherits":29,"stream":50}],54:[function(require,module,exports){
+},{"./capability":53,"./response":55,"_process":33,"buffer":25,"inherits":30,"stream":51}],55:[function(require,module,exports){
 (function (process,global,Buffer){
 var capability = require('./capability')
 var inherits = require('inherits')
@@ -6670,7 +6688,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"./capability":52,"_process":32,"buffer":24,"inherits":29,"stream":50}],55:[function(require,module,exports){
+},{"./capability":53,"_process":33,"buffer":25,"inherits":30,"stream":51}],56:[function(require,module,exports){
 module.exports = {
   "100": "Continue",
   "101": "Switching Protocols",
@@ -6731,7 +6749,7 @@ module.exports = {
   "511": "Network Authentication Required"
 }
 
-},{}],56:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -6954,7 +6972,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":24}],57:[function(require,module,exports){
+},{"buffer":25}],58:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -7688,7 +7706,7 @@ Url.prototype.parseHost = function() {
   if (host) this.hostname = host;
 };
 
-},{"./util":58,"punycode":33,"querystring":36}],58:[function(require,module,exports){
+},{"./util":59,"punycode":34,"querystring":37}],59:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -7706,7 +7724,7 @@ module.exports = {
   }
 };
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;

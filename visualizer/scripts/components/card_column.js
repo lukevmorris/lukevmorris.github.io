@@ -5,6 +5,7 @@ var CardColumn = React.createClass({
   render: function() {
     return (
       React.createElement("div", {className: "cardColumn"},
+        React.createElement("div", {className: "componentLabel"}, "Column"),
         React.createElement(CardViewport)
       )
     );

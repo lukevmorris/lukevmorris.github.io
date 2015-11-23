@@ -1,5 +1,5 @@
 CardColumn = require("./card_column");
-BufferingCollator = require("./buffering_collator");
+BufferContainer = require("./buffer_container");
 RewindStream = require("./rewind_stream");
 SearchQuery = require("./search_query");
 
@@ -8,7 +8,7 @@ var SearchVisualizer = React.createClass({
     return (
       React.createElement("div", {className: "searchVisualizer"},
         React.createElement(CardColumn),
-        React.createElement(BufferingCollator),
+        React.createElement(BufferContainer),
         React.createElement(RewindStream),
         React.createElement(SearchQuery)
       )
