@@ -1,1 +1,675 @@
-Hosted <a href="https://github.com/lukevmorris/lukevmorris.github.io/blob/master/index.html">Here</a>
+<div class="hero hero-light about-hero" style="background-image: url(/img/downloads-hero.jpg);">
+  <div class="container text-center">
+    <div class="row" style="padding-bottom: 32px;">
+      <div class="col-md-12">
+        <h1>Downloads</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-3">
+        <div class="well well-downloads">
+          <h3 class="deluxe" style="font-size: 1.5em;">Telegraf</h3>
+          <h5 style="font-size: 0.75em;">Time-Series Data Collector</h5>
+          <hr>
+          <button data-target="#telegraf-modal" data-toggle="modal" type="button" id="telegraf-button" class="btn btn-block telegraf-modal btn-danger">v1.5.3</button>
+          <br>
+          <!--
+          <br>
+          <button data-target="#telegraf-unstable-modal" data-toggle="modal" type="button" id="telegraf-unstable-button" class="btn btn-block telegraf-modal btn-danger">v1.4.0 RC2</button>
+          -->
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="well well-downloads">
+          <h3 class="deluxe" style="font-size: 1.5em;">InfluxDB</h3>
+          <h5 style="font-size: 0.75em;">Time-Series Data Storage</h5>
+          <hr>
+          <button data-target="#influxdb-modal" data-toggle="modal" type="button" id="influxdb-button" class="btn btn-block influxdb-modal btn-primary">v1.5.1</button>
+          <br>
+          <button data-target="#influxdb-unstable-modal" data-toggle="modal" type="button" id="influxdb-unstable-button" class="btn btn-block influxdb-modal btn-primary">Nightly</button>
+          <br>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="well well-downloads">
+          <h3 class="deluxe" style="font-size: 1.5em;">Chronograf</h3>
+          <h5 style="font-size: 0.75em;">Time-Series Data Visualization</h5>
+          <hr>
+          <button data-target="#chronograf-stable-modal" data-toggle="modal" type="button" id="chronograf-stable-button" class="btn btn-block chronograf-button chronograf-modal btn-warning">v1.4.2.3</button>
+          <br>
+          <!--
+          <br>
+          <button data-target="#chronograf-unstable-modal" data-toggle="modal" type="button" id="chronograf-unstable-button" class="btn btn-block chronograf-button chronograf-modal btn-warning">v1.4.0.0-rc2</button>
+          -->
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <div class="well well-downloads">
+          <h3 class="deluxe" style="font-size: 1.5em;">Kapacitor</h3>
+          <h5 style="font-size: 0.75em;">Time-Series Data Processing</h5>
+          <hr>
+          <button data-target="#kapacitor-modal" data-toggle="modal" type="button" id="kapacitor-button" class="btn btn-block kapacitor-modal btn-success">v1.4.1</button>
+          <br>
+          <!--
+          <br>
+          <button data-target="#kapacitor-unstable-modal" data-toggle="modal" type="button" id="kapacitor-button" class="btn btn-block kapacitor-modal btn-success">v1.1.0 RC2</button>
+          -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-section dark-less">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <div class="well well-arctic margin-bottom-zero">
+          <h2 class="deluxe margin-bottom-zero">InfluxCloud</h2>
+          <p>InfluxData Platform on AWS</p>
+          <a href="https://cloud.influxdata.com/trial/user" class="btn btn-outline-light btn-caps">14 Day Free Trial</a>
+          <br/>
+          <br/>
+        </div>
+      </div>
+      <div class="col-sm-6 text-center">
+        <div class="well well-spring margin-bottom-zero">
+          <h2 class="deluxe margin-bottom-zero">InfluxEnterprise</h2>
+          <p>Highly-Scalable InfluxDB Clusters on Your Infrastructure</p>
+          <a href="https://www.influxdata.com/influxenterprise/" class="btn btn-outline-light btn-caps">Learn More</a>
+          <br/>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade telegraf-modal" id="telegraf-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Telegraf v1.5.3</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install telegraf</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull telegraf</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">SHA256:
+            <code>9f61c0faf2d02acf869c7f8b1a840186a753b72359c1cb7cb28f6f514fc2c39a</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf_1.5.3-1_amd64.deb
+sudo dpkg -i telegraf_1.5.3-1_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">SHA256:
+            <code>541f1f6fc063b8c170b8f26a192332a927be8f9886c9a8b5dd04ab5f58e322d4</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3-1.x86_64.rpm
+sudo yum localinstall telegraf-1.5.3-1.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>12d27b8fa152dac36843e20e80f8699152cb3ce2cd9422e08a7870eb670cb4be</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3_windows_amd64.zip
+unzip telegraf-1.5.3_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>91917b56b1dea0238fd6bde6d9ce783f9706dcb9a4a4a3b784a2a0f72dbaa024</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3_linux_amd64.tar.gz
+tar xf telegraf-1.5.3_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">SHA256:
+            <code>fb0b86e5bbd84cff64a8cd2c57df08d3d870628188c8e6a49352799921288ad6</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3_linux_i386.tar.gz
+tar xf telegraf-1.5.3_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">SHA256:
+            <code>b00a25decd5f51e3027c3d768ab6c24d87121aac5309d6ade98e5ec4523c29fc</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3_linux_armhf.tar.gz
+tar xf telegraf-1.5.3_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade telegraf-modal" id="telegraf-unstable-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Telegraf v1.4.0 RC2</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install telegraf</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull telegraf</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">SHA256:
+            <code>3fa0ac2b20b44929d326a45aa45bdc658723b28e154e0509e5ecf9d78d4ea546</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf_1.4.0~rc2-1_amd64.deb
+sudo dpkg -i telegraf_1.4.0~rc2-1_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">SHA256:
+            <code>948844253384d82e26b2ff0db1f19a3995e8021b729e05f6dc559af52e3edcb6</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.4.0-0.rc2.x86_64.rpm
+sudo yum localinstall telegraf-1.4.0-0.rc2.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>c0261680cf720cc1cdae2f7c51074b03061a08687b7bb32668cbf159c4b64674</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.4.0~rc2_windows_amd64.zip
+unzip telegraf-1.4.0~rc2_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>d573dbcd2a1253f0448cf410bc439bffcf5d3627ab1184b21d27e1dd9dd7cbb9</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.4.0~rc2_linux_amd64.tar.gz
+tar xvfz telegraf-1.4.0~rc2_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">SHA256:
+            <code>5d7810074f872de1b439045dabcfc22d8469869543c3bef02aaace290b6b61c1</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.4.0~rc2_linux_i386.tar.gz
+tar xvfz telegraf-1.4.0~rc2_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">SHA256:
+            <code>6a23fa953730c00af801eedd77345569dbcd3fd78540d8a136d8889283272313</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/telegraf/releases/telegraf-1.4.0~rc2_linux_armhf.tar.gz
+tar xvfz telegraf-1.4.0~rc2_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade influxdb-modal" id="influxdb-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">InfluxDB v1.5.1</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install influxdb</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull influxdb</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">SHA256:
+            <code>e2fc5e0ece48deff60fe01b5e18c6f05884ad8e7cab3c3399ec333798cd67428</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb_1.5.1_amd64.deb
+sudo dpkg -i influxdb_1.5.1_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">SHA256:
+            <code>aa9a90e6f61c26118f96e8e44c930cd2a51ee0c534cb80286dd5b9f063b92832</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1.x86_64.rpm
+sudo yum localinstall influxdb-1.5.1.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>63fac171d5f940b95ced470133ee20b9fd16bd71fedc1f6a155081a38cef286c</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1_windows_amd64.zip
+unzip influxdb-1.5.1_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>79d924a0846146f08c608cdb05715d44d374cc7e6ade701992cb6f83d8b37088</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1_linux_amd64.tar.gz
+tar xvfz influxdb-1.5.1_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit, static)
+          <p style="float:right;">SHA256:
+            <code>6baea803b56feb4e3319b52b701cbb8cac4491c4378c23b6f282dc9d616910e3</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1-static_linux_amd64.tar.gz
+tar xvfz influxdb-1.5.1-static_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">SHA256:
+            <code>62b980d1c3449709f3ae9e80ec54410a90193ac26762b19dbb438dba7da39d52</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1_linux_i386.tar.gz
+tar xvfz influxdb-1.5.1_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">SHA256:
+            <code>8ecb41296333411a6fb7e47f4b4ac817564af9e4b72f0206b21f619b81af9850</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.5.1_linux_armhf.tar.gz
+tar xvfz influxdb-1.5.1_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade influxdb-modal" id="influxdb-unstable-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">InfluxDB Nightly (Unstable)</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>Ubuntu &amp; Debian</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb_nightly_amd64.deb
+sudo dpkg -i influxdb_nightly_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly.x86_64.rpm
+sudo yum localinstall influxdb-nightly.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly_windows_amd64.zip
+unzip influxdb-nightly_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly_linux_amd64.tar.gz
+tar xvfz influxdb-nightly_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly_linux_i386.tar.gz
+tar xvfz influxdb-nightly_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)</h4>
+        <pre><code>wget https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly_linux_armhf.tar.gz
+tar xvfz influxdb-nightly_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade chronograf-modal" id="chronograf-stable-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Chronograf v1.4.2.3</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install chronograf</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull quay.io/influxdb/chronograf:1.4.2.3</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">SHA256:
+            <code>fda05e3d5bf456516bdf763dfd89a8d26918a78a85a85adb44b1ca580a1ae96f</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf_1.4.2.3_amd64.deb
+sudo dpkg -i chronograf_1.4.2.3_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">SHA256:
+            <code>c8c29af90cf21ef89d8deecb31bdbdab604d545a2d2b72ce5383f599edd42d76</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3.x86_64.rpm
+sudo yum localinstall chronograf-1.4.2.3.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Mac OS X
+          <p style="float:right;">SHA256:
+            <code>2110c2014622409f2625069352813ff810cdab42632ea3b1a5e38416377b0d74</code>
+          </p>
+        </h4>
+        <pre><code><a href="https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_darwin_amd64.tar.gz">https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_darwin_amd64.tar.gz</a>
+tar zxvf chronograf-1.4.2.3_darwin_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Windows Binaries
+          <p style="float:right;">SHA256:
+            <code>03aca102db1b546845dee85cf0d6b35f0552093fca749dfa52a102a8035209c1</code>
+          </p>
+        </h4>
+        <pre><code><a href="https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_windows_amd64.zip">https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_windows_amd64.zip</a>
+unzip chronograf-1.4.2.3_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>661b605cd47679ee92a2b331a92ffdc2cd6e99365ab147c47634a5babef80eff</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_linux_amd64.tar.gz
+tar xvfz chronograf-1.4.2.3_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">SHA256:
+            <code>73e5f7703f78bd2ddfd90a9913255ffd182488f1a577d4b61e87396853b0b5b2</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_linux_i386.tar.gz
+tar xvfz chronograf-1.4.2.3_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">SHA256:
+            <code>da495fa33381b4b245f1685686d903eb327d0f11851600777a3d8a029d3589ca</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.2.3_linux_armhf.tar.gz
+tar xvfz chronograf-1.4.2.3_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade chronograf-modal" id="chronograf-unstable-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Chronograf v1.4.0.0-rc2</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>Docker Image</h4>
+        <pre><code>docker pull quay.io/influxdb/chronograf:1.4.0.0-rc2</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">SHA256:
+            <code>2c86343c2c4e2d81d69fe4fa22d739d26301232642282d821d2e757d316346a2</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf_1.4.0.0~rc2_amd64.deb
+sudo dpkg -i chronograf_1.4.0.0~rc2_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">SHA256:
+            <code>e8d7eaea49a99f444f883a6e1c05c89061c895b359cc10f010b84f21f95f58f2</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2.x86_64.rpm
+sudo yum localinstall chronograf-1.4.0.0~rc2.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Mac OS X
+          <p style="float:right;">SHA256:
+            <code>1230b7009a86552701dbb39721c9e77a5efcdd42a26442b9c126b8e0cff2244b</code>
+          </p>
+        </h4>
+        <pre><code><a href="https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_darwin_amd64.tar.gz">https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_darwin_amd64.tar.gz</a>
+tar zxvf chronograf-1.4.0.0~rc2_darwin_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Windows Binaries
+          <p style="float:right;">SHA256:
+            <code>737a12f9164c4ec0166ccd2ebc9d4046308df90edec40cb56b61c0a83cfecf92</code>
+          </p>
+        </h4>
+        <pre><code><a href="https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_windows_amd64.zip">https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_windows_amd64.zip</a>
+unzip chronograf-1.4.0.0~rc2_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">SHA256:
+            <code>0e7ed5f5a9523760d47e81efc765a5b04790acb08854c0fba8114c13654cea7b</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_linux_amd64.tar.gz
+tar xvfz chronograf-1.4.0.0~rc2_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">SHA256:
+            <code>e9b0f26698d365fa68212312f46026a9501bb11bd14ee4a4b7131e8f010781b7</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_linux_i386.tar.gz
+tar xvfz chronograf-1.4.0.0~rc2_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">SHA256:
+            <code>e5e826d8118fb991308b99c7521d1211630c42e52fd86f29756e49a98f1cffa9</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/chronograf/releases/chronograf-1.4.0.0~rc2_linux_armhf.tar.gz
+tar xvfz chronograf-1.4.0.0~rc2_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade kapacitor-modal" id="kapacitor-unstable-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Kapacitor v1.1.0 RC2</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install kapacitor</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull kapacitor</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">MD5:
+            <code>500cac8c8b0f766fbd63d6dcfdec1add</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor_1.1.0~rc2_amd64.deb
+sudo dpkg -i kapacitor_1.1.0~rc2_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">MD5:
+            <code>084bcf155e37aaebd431b48fbf5b2e17</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.1.0~rc2.x86_64.rpm
+sudo yum localinstall kapacitor-1.1.0~rc2.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)
+          <p style="float:right;">MD5:
+            <code>1088d66c46b53bbb46f8aab6eb73759d</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.1.0~rc2_windows_amd64.zip
+unzip kapacitor-1.1.0~rc2_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">MD5:
+            <code>8cd257f7ca04720cc5de7507d60840e0</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.1.0~rc2_linux_amd64.tar.gz
+tar xvfz kapacitor-1.1.0~rc2_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">MD5:
+            <code>f0d826dce6452d76551a20bfab411d18</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.1.0~rc2_linux_i386.tar.gz
+tar xvfz kapacitor-1.1.0~rc2_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">MD5:
+            <code>3f7884bbb3d466fb70b75f859fa327a6</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.1.0~rc2_linux_armhf.tar.gz
+tar xvfz kapacitor-1.1.0~rc2_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade kapacitor-modal" id="kapacitor-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #292933;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Kapacitor v1.4.1</h4>
+      </div>
+      <div class="modal-body" style="background-color: #292933;">
+        <h4>OS X (via
+          <a href="http://brew.sh/" target="_blank">Homebrew</a>)</h4>
+        <pre><code>brew update
+brew install kapacitor</code></pre>
+        <hr />
+        <h4>Docker Image</h4>
+        <pre><code>docker pull kapacitor</code></pre>
+        <hr />
+        <h4>Ubuntu &amp; Debian
+          <p style="float:right;">MD5:
+            <code>9610450a92b2a67ad2d080d496868445</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor_1.4.1_amd64.deb
+sudo dpkg -i kapacitor_1.4.1_amd64.deb</code></pre>
+        <hr />
+        <h4>RedHat &amp; CentOS
+          <p style="float:right;">MD5:
+            <code>36a42ebb13bd2ead4d8c594641a1e228</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.4.1.x86_64.rpm
+sudo yum localinstall kapacitor-1.4.1.x86_64.rpm</code></pre>
+        <hr />
+        <h4>Windows Binaries (64-bit)
+          <p style="float:right;">MD5:
+            <code>b90428b792ffc5792a783166e6a2873e</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.4.1_windows_amd64.zip
+unzip kapacitor-1.4.1_windows_amd64.zip</code></pre>
+        <hr />
+        <h4>Linux Binaries (64-bit)
+          <p style="float:right;">MD5:
+            <code>ee36f12252cff41cf63e66bd7c306438</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.4.1_linux_amd64.tar.gz
+tar xvfz kapacitor-1.4.1_linux_amd64.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (32-bit)
+          <p style="float:right;">MD5:
+            <code>d8f4e56a12ced3a9f4e807883fa84537</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.4.1_linux_i386.tar.gz
+tar xvfz kapacitor-1.4.1_linux_i386.tar.gz</code></pre>
+        <hr />
+        <h4>Linux Binaries (ARM)
+          <p style="float:right;">MD5:
+            <code>32bfc2230a220084da6e07cda19be758</code>
+          </p>
+        </h4>
+        <pre><code>wget https://dl.influxdata.com/kapacitor/releases/kapacitor-1.4.1_linux_armhf.tar.gz
+tar xvfz kapacitor-1.4.1_linux_armhf.tar.gz</code></pre>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="downloadsform-modal" data-backdrop="static" data-keyboard="false" class="modal fade downloadsform-modal" role="dialog"
+  tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" data-dismiss="modal" class="close" type="button">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h2>Register your download</h2>
+        <p style="color: #22adf6; font-size: 16px;">Please provide your email address and we will notify you of any product updates. And we'll send you some stickers!</p>
+      </div>
+      <div class="modal-body">
+        <form id="mktoForm_1105"></form>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .continue {
+    float: right;
+    margin-top: 10px;
+  }
+
+  .back {
+    float: left;
+    margin-top: 10px;
+  }
+
+  .downloads__modal-checkbox {
+    padding-left: 15px;
+  }
+
+  .submit {
+    margin-top: 15px;
+  }
+
+  .form-control {
+    border-radius: 6px;
+  }
+</style>
