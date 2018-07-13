@@ -18,6 +18,51 @@
 </head>
 
 <body>
+
+  <script>
+    (function (name, path, ctx) {
+      var latest, prev = name !== 'Keen' && window.Keen ? window.Keen : false;
+      ctx[name] = ctx[name] || {
+        ready: function (fn) {
+          var h = document.getElementsByTagName('head')[0],
+            s = document.createElement('script'),
+            w = window,
+            loaded;
+          s.onload = s.onerror = s.onreadystatechange = function () {
+            if ((s.readyState && !(/^c|loade/.test(s.readyState))) || loaded) {
+              return
+            }
+            s.onload = s.onreadystatechange = null;
+            loaded = 1;
+            latest = w.Keen;
+            if (prev) {
+              w.Keen = prev
+            } else {
+              try {
+                delete w.Keen
+              } catch (e) {
+                w.Keen = void 0
+              }
+            }
+            ctx[name] = latest;
+            ctx[name].ready(fn)
+          };
+          s.async = 1;
+          s.src = path;
+          h.parentNode.insertBefore(s, h)
+        }
+      }
+    })('KeenAsync', 'https://d26b395fwzu5fz.cloudfront.net/keen-tracking-1.4.2.min.js', this);
+
+    KeenAsync.ready(function () {
+      var client = new KeenAsync({
+        projectId: '5b491f77c9e77c0001ebaeda',
+        writeKey: 'AFF84F9B70699F38CA068B250364A360D9A315C7634D0F308A77FB78887F1A94C3547D0DD0EEE18DFD06B91F1CF4C5A9D4616388171F1355DDB09A78DF85AE4F64C7F470041A14057E1C0CF94206C83D0A9019ACE0A1A1DBFCE10B227D6F60F8'
+      });
+
+      client.initAutoTracking();
+    });
+  </script>
 </body>
 
 </html>
